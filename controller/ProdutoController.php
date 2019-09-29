@@ -23,6 +23,10 @@
             $stm->execute();
 
             $result = $stm->fetchAll();
+            if (is_null($result) || empty($result)) {
+                return NULL;
+            }
+            return $result[0];
         }
     }
 ?>

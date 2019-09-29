@@ -6,7 +6,7 @@
         private $emailFunc;
         private $senhaFunc;
 
-        function __construct($codFunc, $nomeFunc, $emailFunc, $senhaFunc) {
+        function __contruct($codFunc, $nomeFunc, $emailFunc, $senhaFunc) {
             setCodFunc($codFunc);
             setNomeFunc($nomeFunc);
             setEmailFunc($emailFunc);
@@ -43,6 +43,25 @@
 
         function setSenhaFunc($senhaFunc) {
             $this->senhaFunc=$senhaFunc;
+        }
+
+        function printInfo() {
+            echo '<br>---------------[FUNCIONÁRIO]---------------';
+            echo '<br>Cod: '.$this->getCodFunc();
+            echo '<br>Nome: '.$this->getNomeFunc();
+            echo '<br>e-mail: '.$this->getEmailFunc();
+            echo '<br>senha: '.$this->getSenhaFunc();
+            echo '<br>';
+        }
+
+        public static function fromPDO($fPDO) {
+            $employee = new Funcionario();
+            $employee->setCodFunc($fPDO['codFunc']);
+            $employee->setNomeFunc($fPDO['nomeFunc']);
+            $employee->setEmailFunc($fPDO['emailFunc']);
+            $employee->setSenhaFunc($fPDO['senhaFunc']);
+
+            return $employee;
         }
     }
 ?>

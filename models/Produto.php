@@ -61,6 +61,7 @@
             echo '<br>Nome: '.$this->getNomeProd();
             echo '<br>Descrição: '.$this->getDescricaoProd();
             echo '<br>QTDE: '.$this->getQtdProd();
+            echo '<br>Preço: '.$this->getPrecoProd();
             echo '<br>';
         }
 
