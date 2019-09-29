@@ -42,7 +42,7 @@
         }
 
         function setSenhaFunc($senhaFunc) {
-            $this->=$senhaFunc;
+            $this->senhaFunc=$senhaFunc;
         }
     }
 ?>

@@ -54,5 +54,25 @@
         function setPrecoProd($precoProd) {
             $this->precoProd=$precoProd;
         }
+
+        function printInfo() {
+            echo '<br>---------------[PRODUTO]---------------';
+            echo '<br>Cod: '.$this->getCodProd();
+            echo '<br>Nome: '.$this->getNomeProd();
+            echo '<br>Descrição: '.$this->getDescricaoProd();
+            echo '<br>QTDE: '.$this->getQtdProd();
+            echo '<br>';
+        }
+
+        public static function fromPDO($pDBO) {
+            $product = new Produto();
+            $product->setCodProd($pDBO['codProd']);
+            $product->setNomeProd($pDBO['nomeProd']);
+            $product->setDescricaoProd($pDBO['descricaoProd']);
+            $product->setQtdProd($pDBO['qtdProd']);
+            $product->setPrecoProd($pDBO['precoProd']);
+
+            return $product;
+        }
     }
 ?>
