@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/login.css"/>
+        <link rel="stylesheet" href="../css/cadastro_funcionario.css"/>
         <link rel="shortcut icon" href="../img/logo.png">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>EcoStore</title>
@@ -31,6 +31,8 @@
                         <input type="email" placeholder="email@email.com" name='emailFunc' required/>
                         <h5>Senha:</h5><br>
                         <input type="password" placeholder="senha" name='senhaFunc' required/>
+                        <h5>Data de Nascimento:</h5><br>
+                        <input type="date" placeholder="Data" name='dataNascimentoFunc' required/>
                         <button type="submit">Cadastrar</button>
                         <a style="color:black;" href="menu_gerente.php">Voltar</a>
                     </form>
