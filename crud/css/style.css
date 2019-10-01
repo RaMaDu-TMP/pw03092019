@@ -1,0 +1,177 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    background: url(../img/home.jpg) no-repeat 50% 50%;
+    background-size: cover;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    padding: 0px 20px 0px 20px;
+    background: rgba(72,79,86,0.6);
+    border-bottom: 2px solid green;
+}
+
+.logo img{
+    margin-top: 5px;
+    position: fixed;
+    float: left;
+    width: 130px;
+    height: 70px;
+    
+}
+
+.menu{
+    float: right;
+}
+
+nav li{
+    text-align: center;        
+}
+
+nav ul li{
+    margin-top: 5px;
+    display: inline-block;
+    padding: 20px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav ul li a:hover{
+    color: green;
+    transition: all 0.3s ease-in;
+    /*Nao deixa sublinhado o link*/
+    text-decoration: none;
+}
+
+.brand{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-top: 300px;
+    position: absolute;
+}
+
+.brand h1{
+    color: white;
+    font-size: 80px;
+    margin-bottom: 50px;
+}
+
+.brand a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 2px;
+    font-size: 15px;
+    padding: 15px 40px 15px 40px;
+    background: green;
+}
+
+.brand a:hover{
+    text-decoration: none;
+    background: white;
+    transition: all 0.2s ease-in;
+}
+
+.headerProdutos{
+    width: 100%;
+    height: 60px;
+    background: #999;
+    padding-left: 6em;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background: rgb(14, 46, 78);
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
+}
+
+.headerProdutos h4{
+    text-align: center;
+    color: white;  
+}
+
+.content{
+    margin: 4em auto;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.content div{
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;    
+}
+
+.content p{
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;
+}
+
+.rodapeCR{
+    text-align: center;
+}
+
+.rodapeCR img{
+    width: 40px;
+    height: 40px;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    padding: 10px 20px 0px 20px;
+    background: rgb(14, 46, 78);
+    border-top: 2px solid green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
