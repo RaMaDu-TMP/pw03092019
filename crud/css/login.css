@@ -65,6 +65,20 @@ nav ul li a:hover{
     margin: auto;
 }
 
+.login-funcionario{
+    width: 380px;
+    padding: 10% 0 0;
+    margin: auto;
+    display: none;
+}
+
+.login-gerente{
+    width: 380px;
+    padding: 10% 0 0;
+    margin: auto;
+    display: none;
+}
+
 .form{
    position: relative;
    background: rgba(37, 71, 105, 0.6);
