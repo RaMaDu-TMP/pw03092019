@@ -1,11 +1,15 @@
 <?php
     class FuncionarioController {
         
-        public static function getAll() {
-            require_once 'Database.php';
+        public static function insert($func) {
+            $conn = FuncionarioController::prepareConnection();
+            $stm = $conn->prepare('INSERT INTO funcionario() VALUES()');
+            $stm->bindValue(":codFunc", $codFunc);
+        }
 
-            $db = new Database();
-            $conn = $db->connection();
+        public static function getAll() {
+
+            $conn = FuncionarioController::prepareConnection();
             $stm = $conn->prepare('SELECT * FROM funcionario');
             $stm->execute();
 
@@ -14,10 +18,8 @@
         }
 
         public static function getByCod($codFunc) {
-            require_once 'Database.php';
 
-            $db = new Database();
-            $conn = $db->connection();
+            $conn = FuncionarioController::prepareConnection();
             $stm = $conn->prepare('SELECT * FROM funcionario WHERE codFunc = :codFunc');
             $stm->bindValue(":codFunc", $codFunc);
             $stm->execute();
@@ -27,6 +29,14 @@
                 return NULL;
             }
             return $result[0];
+        }
+
+        private static function prepareConnection() {
+            require_once 'Database.php';
+
+            $db = new Database();
+            $conn = $db->connection();
+            return $conn;
         }
     }
 ?> 
