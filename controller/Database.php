@@ -22,7 +22,7 @@
                     PDO::ERRMODE_EXCEPTION
                 );
             } catch(Trowable $e) {
-                echo "Erro: ".$e.getMessage();
+                die("ERROR: Could not connect. ".$e.getMessage());
             }
         }
 
