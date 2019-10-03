@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Out-2019 às 03:33
+-- Tempo de geração: 03-Out-2019 às 04:19
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.3.9
 
@@ -32,17 +32,18 @@ CREATE TABLE `funcionario` (
   `codFunc` int(11) NOT NULL,
   `nomeFunc` varchar(200) NOT NULL,
   `emailFunc` varchar(100) NOT NULL,
-  `senhaFunc` varchar(50) NOT NULL
+  `senhaFunc` varchar(50) NOT NULL,
+  `dataNascFunc` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `funcionario`
 --
 
-INSERT INTO `funcionario` (`codFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`) VALUES
-(1, 'Carlos Alberto', 'carlos@gmail.com', 'carlos123'),
-(2, 'Joao Arnaldo', 'joaoarnaldo@gmail.com', 'joao123'),
-(3, 'Ricardo Milos', 'milos@gmail.com', 'milos123');
+INSERT INTO `funcionario` (`codFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `dataNascFunc`) VALUES
+(1, 'Carlos Alberto', 'carlos@gmail.com', 'carlos123', '1980-02-02'),
+(2, 'Joao Arnaldo', 'joaoarnaldo@gmail.com', 'joao123', '1980-02-03'),
+(3, 'Ricardo Milos', 'milos@gmail.com', 'milos123', '1980-02-04');
 
 -- --------------------------------------------------------
 
@@ -54,17 +55,18 @@ CREATE TABLE `gerente` (
   `codGer` int(11) NOT NULL,
   `nomeGer` varchar(200) NOT NULL,
   `emailGer` varchar(100) NOT NULL,
-  `senhaGer` varchar(50) NOT NULL
+  `senhaGer` varchar(50) NOT NULL,
+  `dataNascGer` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `gerente`
 --
 
-INSERT INTO `gerente` (`codGer`, `nomeGer`, `emailGer`, `senhaGer`) VALUES
-(1, 'Joao Gilberto', 'joao@gmail.com', 'joao123'),
-(2, 'Arnaldo Antunes', 'arnaldo@gmail.com', 'arnaldo123'),
-(3, 'Ricardo Solim', 'solim@gmail.com', 'solim123');
+INSERT INTO `gerente` (`codGer`, `nomeGer`, `emailGer`, `senhaGer`, `dataNascGer`) VALUES
+(1, 'Joao Gilberto', 'joao@gmail.com', 'joao123', '1983-02-02'),
+(2, 'Arnaldo Antunes', 'arnaldo@gmail.com', 'arnaldo123', '1982-12-02'),
+(3, 'Ricardo Solim', 'solim@gmail.com', 'solim123', '1981-02-22');
 
 -- --------------------------------------------------------
 
@@ -134,7 +136,7 @@ ALTER TABLE `gerente`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `codProd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `codProd` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

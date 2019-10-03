@@ -3,11 +3,15 @@
 	require_once '../models/Produto.php';
 	
 	echo '<h1>Todos os produtos</h1>';
-	$allProducts = ProdutoController::getAll();
-	foreach($allProducts as $p) {
-		$product = Produto::fromPDO($p);
-		$product->printInfo();
-	}
+    $allProducts = ProdutoController::getAll();
+    if (is_null($allProducts) || empty($allProducts)) {
+        echo 'Não encontrado';
+    } else {
+        foreach($allProducts as $p) {
+            $product = Produto::fromPDO($p);
+            $product->printInfo();
+        }
+    }
 
 	$cod = 1;
     echo '<h1>Produto com código '.$cod.':</h1>';

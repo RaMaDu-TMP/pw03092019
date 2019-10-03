@@ -5,7 +5,7 @@
         private $nomeFunc;
         private $emailFunc;
         private $senhaFunc;
-        private $dataNascimentoFunc;
+        private $dataNascFunc;
 
         function __contruct($codFunc, $nomeFunc, $emailFunc, $senhaFunc) {
             setCodFunc($codFunc);
@@ -46,12 +46,12 @@
             $this->senhaFunc=$senhaFunc;
         }
         
-        function getDataNascimentoFunc() {
-            return $this->dataNascimentoFunc;
+        function getDataNascFunc() {
+            return $this->dataNascFunc;
         }
 
-        function setDataNascimentoFunc($dataNascimentoFunc) {
-            $this->dataNascimentoFunc=$dataNascimentoFunc;
+        function setDataNascFunc($dataNascFunc) {
+            $this->dataNascFunc=$dataNascFunc;
         }
 
         function printInfo() {
@@ -60,7 +60,7 @@
             echo '<br>Nome: '.$this->getNomeFunc();
             echo '<br>e-mail: '.$this->getEmailFunc();
             echo '<br>senha: '.$this->getSenhaFunc();
-            echo '<br>data de nascimento: '.$this->getDataNascimentoFunc();
+            echo '<br>data de nascimento: '.$this->getDataNascFunc();
             echo '<br>';
         }
 
@@ -70,7 +70,7 @@
             $employee->setNomeFunc($fPDO['nomeFunc']);
             $employee->setEmailFunc($fPDO['emailFunc']);
             $employee->setSenhaFunc($fPDO['senhaFunc']);
-            $employee->setDataNascimentoFunc($fPDO['dataNascimentoFunc']);
+            $employee->setDataNascFunc($fPDO['dataNascFunc']);
 
             return $employee;
         }

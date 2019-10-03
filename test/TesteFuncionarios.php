@@ -4,13 +4,13 @@
     
     echo '<h1>Todos os funcionários</h1>';
     $allFuncionarios = FuncionarioController::getAll();
-    if (!is_null($allFuncionarios)) {
+    if (is_null($allFuncionarios) || empty($allFuncionarios)) {
+        echo 'Não encontrado';
+    } else {
         foreach($allFuncionarios as $f) {
             $employee = Funcionario::fromPDO($f);
             $employee->printInfo();
         }
-    } else {
-        echo 'Nenhum funcionário encontrado';
     }
     
     $cod = 3;

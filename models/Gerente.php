@@ -5,7 +5,7 @@
         private $nomeGer;
         private $emailGer;
         private $senhaGer;
-        private $dataNascimentoGer;
+        private $dataNascGer;
 
         function __contruct($codGer, $nomeGer, $emailGer, $senhaGer) {
             setCodGer($codGer);
@@ -46,12 +46,12 @@
             $this->senhaGer=$senhaGer;
         }
         
-        function getDataNascimentoGer() {
-            return $this->dataNascimentoGer;
+        function getDataNascGer() {
+            return $this->dataNascGer;
         }
 
-        function setDataNascimentoGer($dataNascimentoGer) {
-            $this->dataNascimentoGer=$dataNascimentoGer;
+        function setDataNascGer($dataNascGer) {
+            $this->dataNascGer=$dataNascGer;
         }
 
         function printInfo() {
@@ -60,7 +60,7 @@
             echo '<br>Nome: '.$this->getNomeGer();
             echo '<br>e-mail: '.$this->getEmailGer();
             echo '<br>senha: '.$this->getSenhaGer();
-            echo '<br>data de nascimento: '.$this->getDataNascimentoGer();
+            echo '<br>data de nascimento: '.$this->getDataNascGer();
             echo '<br>';
         }
 
@@ -70,7 +70,7 @@
             $manager->setNomeGer($mPDO['nomeGer']);
             $manager->setEmailGer($mPDO['emailGer']);
             $manager->setSenhaGer($mPDO['senhaGer']);
-            $manager->setDataNascimentoGer($mPDO['dataNascimentoGer']);
+            $manager->setDataNascGer($mPDO['dataNascGer']);
 
             return $manager;
         }

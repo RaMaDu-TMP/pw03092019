@@ -3,11 +3,15 @@
 	require_once '../models/Gerente.php';
 	
 	echo '<h1>Todos os gerentes</h1>';
-	$allManager = GerenteController::getAll();
-	foreach($allManager as $g) {
-		$manager = Gerente::fromPDO($g);
-		$manager->printInfo();
-	}
+    $allManager = GerenteController::getAll();
+    if (is_null($allManager) || empty($allManager)) {
+        echo 'Não encontrado';
+    } else {
+        foreach($allManager as $g) {
+            $manager = Gerente::fromPDO($g);
+            $manager->printInfo();
+        }
+    }
 
 	$cod = 1;
     echo '<h1>Gerente com código '.$cod.':</h1>';
