@@ -6,15 +6,15 @@
             $conn = Database::connection();
 
             $stm = $conn->prepare('INSERT INTO gerente('.
-                                    'nomeGer, emailGer, senhaGer, dataNascimentoGer'.
+                                    'nomeGer, emailGer, senhaGer, dataNascGer'.
                                 ') VALUES('.
-                                    ':nomeGer, :emailGer, :senhaGer, :dataNascimentoGer'.
+                                    ':nomeGer, :emailGer, :senhaGer, :dataNascGer'.
                                 ')');
 
             $stm->bindValue(":nomeGer", $ger->getNomeGer());
             $stm->bindValue(":emailGer", $ger->getEmailGer());
             $stm->bindValue(":senhaGer", $ger->getSenhaGer());
-            $stm->bindValue(":dataNascimentoGer", $ger->getDataNascimentoGer());
+            $stm->bindValue(":dataNascGer", $ger->getDataNascGer());
             $stm->execute();
         }
 
@@ -48,15 +48,15 @@
             require_once 'Database.php';
             $conn = Database::connection();
             
-            $stm = $conn->prepare('UPDATE gerente SET'.
-                                    'nomeGer = :nomeGer, emailGer = :emailGer, senhaGer = :senhaGer, dataNascimentoGer = :dataNascimentoGer'.
+            $stm = $conn->prepare('UPDATE gerente SET '.
+                                    'nomeGer = :nomeGer, emailGer = :emailGer, senhaGer = :senhaGer, dataNascGer = :dataNascGer'.
                                 ' WHERE codGer = :codGer'
                             );
 
             $stm->bindValue(":nomeGer", $ger->getNomeGer());
             $stm->bindValue(":emailGer", $ger->getEmailGer());
             $stm->bindValue(":senhaGer", $ger->getSenhaGer());
-            $stm->bindValue(":dataNascimentoGer", $ger->getDataNascimentoGer());
+            $stm->bindValue(":dataNascGer", $ger->getDataNascGer());
 
             $stm->bindValue(":codGer", $ger->getCodGer());
             $stm->execute();
@@ -66,7 +66,7 @@
             require_once 'Database.php';
             $conn = Database::connection();
             
-            $stm = $conn->prepare('DELETE gerente WHERE codGer = :codGer');
+            $stm = $conn->prepare('DELETE FROM gerente WHERE codGer = :codGer');
             $stm->bindValue(":codGer", $ger->getCodGer());
             $stm->execute();
         }

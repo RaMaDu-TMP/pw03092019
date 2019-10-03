@@ -32,4 +32,25 @@
     } else {
         echo 'Não encontrado';
     }
+
+    // Inserction test
+    $newFuncionario = new Funcionario();
+    $newFuncionario->setCodFunc(4);
+    $newFuncionario->setNomeFunc('Eduwardo');
+    $newFuncionario->setEmailFunc('dudu@batata.com');
+    $newFuncionario->setSenhaFunc('Abcd1234');
+    $newFuncionario->setDataNascFunc('2000-10-12 00:00:00');
+
+    echo '<h1>Adicionando funcionário com nome '.$newFuncionario->getNomeFunc().'</h1>';
+    FuncionarioController::insert($newFuncionario);
+
+    // Update test
+    $newFuncionarioNome = "Robson";
+    echo '<h1>Atualizando funcionario com nome '.$newFuncionario->getNomeFunc().' para o nome '.$newFuncionarioNome.'</h1>';
+    $newFuncionario->setNomeFunc($newFuncionarioNome);
+    FuncionarioController::update($newFuncionario);
+
+    // Delete test
+    echo '<h1>Deletando funcionario com nome '.$newFuncionario->getNomeFunc().'</h1>';
+    FuncionarioController::delete($newFuncionario);
 ?>

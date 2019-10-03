@@ -32,4 +32,25 @@
     } else {
         echo 'Não encontrado';
     }
+
+    // Inserction test
+    $newGerente = new Gerente();
+    $newGerente->setCodGer(5);
+    $newGerente->setNomeGer('Eduwardo');
+    $newGerente->setEmailGer('dudu@batata.com');
+    $newGerente->setSenhaGer('Abcd1234');
+    $newGerente->setDataNascGer('2000-10-12 00:00:00');
+
+    echo '<h1>Adicionando gerente com nome '.$newGerente->getNomeGer().'</h1>';
+    GerenteController::insert($newGerente);
+
+    // Update test
+    $newGerenteNome = "Robson";
+    echo '<h1>Atualizando gerente com nome '.$newGerente->getNomeGer().' para o nome '.$newGerenteNome.'</h1>';
+    $newGerente->setNomeGer($newGerenteNome);
+    GerenteController::update($newGerente);
+
+    // Delete test
+    echo '<h1>Deletando gerente com nome '.$newGerente->getNomeGer().'</h1>';
+    GerenteController::delete($newGerente);
 ?>

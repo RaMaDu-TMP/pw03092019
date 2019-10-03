@@ -6,15 +6,15 @@
             $conn = Database::connection();
 
             $stm = $conn->prepare('INSERT INTO funcionario('.
-                                    'nomeFunc, emailFunc, senhaFunc, dataNascimentoFunc'.
+                                    'nomeFunc, emailFunc, senhaFunc, dataNascFunc'.
                                 ') VALUES('.
-                                    ':nomeFunc, :emailFunc, :senhaFunc, :dataNascimentoFunc'.
+                                    ':nomeFunc, :emailFunc, :senhaFunc, :dataNascFunc'.
                                 ')');
 
             $stm->bindValue(":nomeFunc", $func->getNomeFunc());
             $stm->bindValue(":emailFunc", $func->getEmailFunc());
             $stm->bindValue(":senhaFunc", $func->getSenhaFunc());
-            $stm->bindValue(":dataNascimentoFunc", $func->getDataNascimentoFunc());
+            $stm->bindValue(":dataNascFunc", $func->getDataNascFunc());
             $stm->execute();
         }
 
@@ -48,15 +48,15 @@
             require_once 'Database.php';
             $conn = Database::connection();
             
-            $stm = $conn->prepare('UPDATE funcionario SET'.
-                                    'nomeFunc = :nomeFunc, emailFunc = :emailFunc, senhaFunc = :senhaFunc, dataNascimentoFunc = :dataNascimentoFunc'.
+            $stm = $conn->prepare('UPDATE funcionario SET '.
+                                    'nomeFunc = :nomeFunc, emailFunc = :emailFunc, senhaFunc = :senhaFunc, dataNascFunc = :dataNascFunc'.
                                 ' WHERE codFunc = :codFunc'
                             );
 
             $stm->bindValue(":nomeFunc", $func->getNomeFunc());
             $stm->bindValue(":emailFunc", $func->getEmailFunc());
             $stm->bindValue(":senhaFunc", $func->getSenhaFunc());
-            $stm->bindValue(":dataNascimentoFunc", $func->getDataNascimentoFunc());
+            $stm->bindValue(":dataNascFunc", $func->getDataNascFunc());
 
             $stm->bindValue(":codFunc", $func->getCodFunc());
             $stm->execute();
@@ -66,7 +66,7 @@
             require_once 'Database.php';
             $conn = Database::connection();
             
-            $stm = $conn->prepare('DELETE funcionario WHERE codFunc = :codFunc');
+            $stm = $conn->prepare('DELETE FROM funcionario WHERE codFunc = :codFunc');
             $stm->bindValue(":codFunc", $func->getCodFunc());
             $stm->execute();
         }

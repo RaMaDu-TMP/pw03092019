@@ -6,14 +6,14 @@
             $conn = Database::connection();
 
             $stm = $conn->prepare('INSERT INTO produto('.
-                                    'nomeProd, descricaoProd, qtdeProd, precoProd'.
+                                    'nomeProd, descricaoProd, qtdProd, precoProd'.
                                 ') VALUES('.
-                                    ':nomeProd, :descricaoProd, :qtdeProd, :precoProd'.
+                                    ':nomeProd, :descricaoProd, :qtdProd, :precoProd'.
                                 ')');
 
             $stm->bindValue(":nomeProd", $prod->getNomeProd());
             $stm->bindValue(":descricaoProd", $prod->getDescricaoProd());
-            $stm->bindValue(":qtdeProd", $prod->getQtdeProd());
+            $stm->bindValue(":qtdProd", $prod->getQtdProd());
             $stm->bindValue(":precoProd", $prod->getPrecoProd());
             $stm->execute();
         }
@@ -48,14 +48,14 @@
             require_once 'Database.php';
             $conn = Database::connection();
             
-            $stm = $conn->prepare('UPDATE Prodionario SET'.
-                                    'nomeProd = :nomeProd, descricaoProd = :descricaoProd, qtdeProd = :qtdeProd, precoProd = :precoProd'.
+            $stm = $conn->prepare('UPDATE produto SET '.
+                                    'nomeProd = :nomeProd, descricaoProd = :descricaoProd, qtdProd = :qtdProd, precoProd = :precoProd'.
                                 ' WHERE codProd = :codProd'
                             );
 
             $stm->bindValue(":nomeProd", $prod->getNomeProd());
             $stm->bindValue(":descricaoProd", $prod->getDescricaoProd());
-            $stm->bindValue(":qtdeProd", $prod->getQtdeProd());
+            $stm->bindValue(":qtdProd", $prod->getQtdProd());
             $stm->bindValue(":precoProd", $prod->getPrecoProd());
 
             $stm->bindValue(":codProd", $prod->getCodProd());
@@ -66,7 +66,7 @@
             require_once 'Database.php';
             $conn = Database::connection();
             
-            $stm = $conn->prepare('DELETE produto WHERE codProd = :codProd');
+            $stm = $conn->prepare('DELETE FROM produto WHERE codProd = :codProd');
             $stm->bindValue(":codProd", $prod->getCodProd());
             $stm->execute();
         }

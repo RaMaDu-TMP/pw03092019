@@ -32,4 +32,24 @@
     } else {
         echo 'Não encontrado';
     }
+
+    // Inserction test
+    $newProduto = new Produto();
+    $newProduto->setNomeProd('Coisas');
+    $newProduto->setDescricaoProd('Sete coisas');
+    $newProduto->setQtdProd(10);
+    $newProduto->setPrecoProd('50.00');
+
+    echo '<h1>Adicionando produto com nome '.$newProduto->getNomeProd().'</h1>';
+    ProdutoController::insert($newProduto);
+
+    // Update test
+    $newProdutoNome = "Robson";
+    echo '<h1>Atualizando produto com nome '.$newProduto->getNomeProd().' para o nome '.$newProdutoNome.'</h1>';
+    $newProduto->setNomeProd($newProdutoNome);
+    ProdutoController::update($newProduto);
+
+    // Delete test
+    echo '<h1>Deletando produto com nome '.$newProduto->getNomeProd().'</h1>';
+    ProdutoController::delete($newProduto);
 ?>
