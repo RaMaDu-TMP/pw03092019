@@ -1,5 +1,5 @@
 <?pphp
-    class GerenteController {
+    // class GerenteController {
         
-    }
+    // }
 ?>

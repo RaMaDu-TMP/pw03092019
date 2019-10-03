@@ -60,7 +60,7 @@
             echo '<br>Nome: '.$this->getNomeFunc();
             echo '<br>e-mail: '.$this->getEmailFunc();
             echo '<br>senha: '.$this->getSenhaFunc();
-            echo '<br>senha: '.$this->getDataNascimentoFunc();
+            echo '<br>data de nascimento: '.$this->getDataNascimentoFunc();
             echo '<br>';
         }
 
@@ -70,7 +70,7 @@
             $employee->setNomeFunc($fPDO['nomeFunc']);
             $employee->setEmailFunc($fPDO['emailFunc']);
             $employee->setSenhaFunc($fPDO['senhaFunc']);
-            $employee->setDataNascimentoFunc($fPDO['DataNascimentoFunc']);
+            $employee->setDataNascimentoFunc($fPDO['dataNascimentoFunc']);
 
             return $employee;
         }
