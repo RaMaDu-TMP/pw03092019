@@ -16,7 +16,8 @@
                 
                 <div class="menu">
                     <ul>
-                        <li><a href="../home.php">HOME</a></li>
+                        <li><a href="../home.php">Home</a></li>
+                        <li><a href="../login.php">Entrar</a></li>
                     </ul>
                 </div>
             </nav> 
@@ -24,20 +25,16 @@
             <div class="login-page">
                 <div class="form">                  
                     <h1 style="color: white;">Menu</h1>
-                    <form class="input-form" action="cadastro_funcionario-Gerente.php">
-                        <button type="submit">Cadastrar Funcionários</button>
+                    <form class="input-form" action="menu_funcionario-Gerente.php">
+                        <button type="submit">Funcionários</button>
                     </form>
                     <br>
-                    <form class="input-form" action="cadastro_produtos-Gerente.php">
-                        <button type="submit">Cadastrar Produtos</button>
+                    <form class="input-form" action="menu_produtos-Gerente.php">
+                        <button type="submit">Produtos</button>
                     </form>
                     <br>
-                    <form class="input-form" action="tabela_produtos-Gerente.php">
-                        <button type="submit">Visualizar Produtos</button>
-                    </form>
-                    <br>
-                    <form class="input-form" action="busca_produto-Gerente.php">
-                        <button type="submit">Buscar Produto</button>
+                    <form class="input-form" action="menu_gerente-Gerente.php">
+                        <button type="submit">Gerente</button>
                     </form>
                 </div>
             </div>

@@ -7,7 +7,7 @@ body{
 
 header{
     width: 100%;
-    height: 105vh;
+    height: 115vh;
     background: url(../img/forms.png) no-repeat 50% 50%;
     background-size: cover;
 }
@@ -63,6 +63,34 @@ nav ul li a:hover{
     width: 380px;
     padding: 10% 0 0;
     margin: auto;
+}
+
+.cad-page{
+    width: 380px;
+    padding: 10% 0 0;
+    margin: auto;
+    display: none;
+}
+
+.altera-page{
+    width: 380px;
+    padding: 10% 0 0;
+    margin: auto;
+    display: none;
+}
+
+.visualiza-page{
+    width: 380px;
+    padding: 10% 0 0;
+    margin: auto;
+    display: none;
+}
+
+.exclui-page{
+    width: 380px;
+    padding: 10% 0 0;
+    margin: auto;
+    display: none;
 }
 
 .form{
