@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Set-2019 às 03:50
+-- Tempo de geração: 03-Out-2019 às 03:33
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.3.9
 
@@ -47,6 +47,28 @@ INSERT INTO `funcionario` (`codFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`) VALU
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `gerente`
+--
+
+CREATE TABLE `gerente` (
+  `codGer` int(11) NOT NULL,
+  `nomeGer` varchar(200) NOT NULL,
+  `emailGer` varchar(100) NOT NULL,
+  `senhaGer` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `gerente`
+--
+
+INSERT INTO `gerente` (`codGer`, `nomeGer`, `emailGer`, `senhaGer`) VALUES
+(1, 'Joao Gilberto', 'joao@gmail.com', 'joao123'),
+(2, 'Arnaldo Antunes', 'arnaldo@gmail.com', 'arnaldo123'),
+(3, 'Ricardo Solim', 'solim@gmail.com', 'solim123');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `produto`
 --
 
@@ -81,6 +103,12 @@ ALTER TABLE `funcionario`
   ADD PRIMARY KEY (`codFunc`);
 
 --
+-- Índices para tabela `gerente`
+--
+ALTER TABLE `gerente`
+  ADD PRIMARY KEY (`codGer`);
+
+--
 -- Índices para tabela `produto`
 --
 ALTER TABLE `produto`
@@ -95,6 +123,12 @@ ALTER TABLE `produto`
 --
 ALTER TABLE `funcionario`
   MODIFY `codFunc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `gerente`
+--
+ALTER TABLE `gerente`
+  MODIFY `codGer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
