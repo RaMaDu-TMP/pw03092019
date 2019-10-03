@@ -2,7 +2,8 @@
     class FuncionarioController {
         
         public static function insert($func) {
-            $conn = FuncionarioController::prepareConnection();
+            require_once 'Database.php';
+            $conn = Database::connection();
 
             $stm = $conn->prepare('INSERT INTO funcionario('.
                                     'nomeFunc, emailFunc, senhaFunc, dataNascimentoFunc'.
@@ -18,8 +19,9 @@
         }
 
         public static function getAll() {
-
-            $conn = FuncionarioController::prepareConnection();
+            require_once 'Database.php';
+            $conn = Database::connection();
+            
             $stm = $conn->prepare('SELECT * FROM funcionario');
             $stm->execute();
 
@@ -28,8 +30,9 @@
         }
 
         public static function getByCod($codFunc) {
+            require_once 'Database.php';
+            $conn = Database::connection();
 
-            $conn = FuncionarioController::prepareConnection();
             $stm = $conn->prepare('SELECT * FROM funcionario WHERE codFunc = :codFunc');
             $stm->bindValue(":codFunc", $codFunc);
             $stm->execute();
@@ -42,7 +45,8 @@
         }
 
         public static function update($func) {
-            $conn = FuncionarioController::prepareConnection();
+            require_once 'Database.php';
+            $conn = Database::connection();
             
             $stm = $conn->prepare('UPDATE funcionario SET'.
                                     'nomeFunc = :nomeFunc, emailFunc = :emailFunc, senhaFunc = :senhaFunc, dataNascimentoFunc = :dataNascimentoFunc'.
@@ -59,19 +63,12 @@
         }
 
         public static function delete($func) {
-            $conn = FuncionarioController::prepareConnection();
+            require_once 'Database.php';
+            $conn = Database::connection();
             
             $stm = $conn->prepare('DELETE funcionario WHERE codFunc = :codFunc');
             $stm->bindValue(":codFunc", $func->getCodFunc());
             $stm->execute();
-        }
-
-        private static function prepareConnection() {
-            require_once 'Database.php';
-
-            $db = new Database();
-            $conn = $db->connection();
-            return $conn;
         }
     }
 ?> 

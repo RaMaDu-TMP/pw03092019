@@ -1,15 +1,16 @@
 <?php
     class Database {
+        private static $instance;
+        private static $conn;
+
         private $host = 'localhost';
         private $db = 'bdweb';
         private $user = 'root';
         private $pass = '';
 
-        private $conn;
-
-        function __construct() {
+        private function __construct() {
             try {
-                $this->conn = new PDO('mysql:'.
+                Database::$conn = new PDO('mysql:'.
                                     'host='.$this->host.
                                     ';dbname='.$this->db.
                                     ';charset=utf8mb4',
@@ -17,7 +18,7 @@
                                     $this->pass
                                 );
 
-                $this->conn->setAttribute(
+                Database::$conn->setAttribute(
                     PDO::ATTR_ERRMODE,
                     PDO::ERRMODE_EXCEPTION
                 );
@@ -26,8 +27,13 @@
             }
         }
 
-        function connection() {
-            return $this->conn;
+        public static function connection() {
+
+            if (is_null(Database::$instance)) {
+                Database::$instance = new Database();
+            }
+
+            return Database::$conn;
         }
     }
 ?>
