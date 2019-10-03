@@ -27,7 +27,7 @@
                         require_once 'ProdutoController.php';
 
                         $produto = new ProdutoController();
-                        $resp = produto->getAll();
+                        $resp = $produto->getAll();
 
                         echo "<table class='table table-hover'>";
                         echo "<thead>";
@@ -46,7 +46,7 @@
                             echo "<td>".$linha['precoProd']."</td>";
                             echo "</tr>";
                             echo "</table>";
-                            echo "<a style='color:black;' href='menu_gerente.php'>Voltar</a>"
+                            echo "<a style='color:black;' href='menu_gerente.php'>Voltar</a>";
                         }
                     ?>
                 </div>
